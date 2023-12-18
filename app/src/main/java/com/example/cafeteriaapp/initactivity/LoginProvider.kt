@@ -2,7 +2,12 @@ package com.example.cafeteriaapp.initactivity
 
 class LoginProvider {
     companion object {
-        private val logins = listOf(
+
+        fun validateCredentials(login: String, password: String): Boolean {
+            return users.any { it.user == login && it.password == password }
+        }
+
+        private val users = listOf(
             LoginModel(
                 user = "Eloy",
                 password = "Eloy123"

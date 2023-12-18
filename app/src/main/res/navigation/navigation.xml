@@ -20,4 +20,8 @@
         android:name="com.example.cafeteriaapp.PayFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_pay" />
+    <activity
+        android:id="@+id/loginActivity"
+        android:name="com.example.cafeteriaapp.initactivity.LoginActivity"
+        android:label="LoginActivity" />
 </navigation>
