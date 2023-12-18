@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/foodFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_fastfood_24"
+        android:title="Foods" />
+    <item
+        android:id="@+id/drinkFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_drink_beverage_24"
+        android:title="Drinks" />
+    <item
+        android:id="@+id/payFragment"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:icon="@drawable/baseline_credit_card_24"
+        android:title="Payment" />
+</menu>
