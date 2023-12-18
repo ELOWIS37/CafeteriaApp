@@ -1,7 +1,8 @@
-package com.example.cafeteriaapp
+package com.example.cafeteriaapp.initactivity
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.example.cafeteriaapp.R
 
 class LoginActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
