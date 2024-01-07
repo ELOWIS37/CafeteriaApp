@@ -27,10 +27,8 @@ class DrinkFragment : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.drinkRecyclerView)
 
-        // Inicializar el DrinkViewModel
         drinkViewModel = ViewModelProvider(this).get(DrinkViewModel::class.java)
 
-        // Inicializar el SharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         val drinkList = drinkViewModel.drinkLiveData.value ?: emptyList()

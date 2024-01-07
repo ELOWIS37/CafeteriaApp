@@ -14,16 +14,16 @@ class PayAdapter(
 ) : RecyclerView.Adapter<PayAdapter.ViewHolder>() {
 
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewProduct: ImageView = itemView.findViewById(R.id.imageViewProducto)
-        val textViewName: TextView = itemView.findViewById(R.id.textViewNombre)
-        val textViewDescription: TextView = itemView.findViewById(R.id.textViewDescripcion)
-        val textViewPrice: TextView = itemView.findViewById(R.id.textViewPrecio)
+        val imageViewProducte: ImageView = itemView.findViewById(R.id.imageViewProducto)
+        val textViewNom: TextView = itemView.findViewById(R.id.textViewNombre)
+        val textViewDescripcio: TextView = itemView.findViewById(R.id.textViewDescripcion)
+        val textViewPreu: TextView = itemView.findViewById(R.id.textViewPrecio)
 
         fun bind(payModel: PayModel) {
-            imageViewProduct.setImageResource(payModel.imgResId)
-            textViewName.text = payModel.nom
-            textViewDescription.text = payModel.descripcio
-            textViewPrice.text = "Preu: ${payModel.preu}€"
+            imageViewProducte.setImageResource(payModel.imgResId)
+            textViewNom.text = payModel.nom
+            textViewDescripcio.text = payModel.descripcio
+            textViewPreu.text = "Preu: ${payModel.preu}€"
         }
     }
 

@@ -27,10 +27,8 @@ class FoodFragment : Fragment() {
 
         val recyclerView: RecyclerView = view.findViewById(R.id.foodRecyclerView)
 
-        // Inicializar el FoodViewModel
         foodViewModel = ViewModelProvider(this).get(FoodViewModel::class.java)
 
-        // Inicializar el SharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
         val foodList = foodViewModel.foodLiveData.value ?: emptyList()

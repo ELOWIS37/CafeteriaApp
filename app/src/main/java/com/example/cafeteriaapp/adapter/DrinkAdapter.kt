@@ -9,6 +9,7 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteriaapp.R
 import com.example.cafeteriaapp.menufragments.drink.DrinkModel
+import com.example.cafeteriaapp.menufragments.food.FoodModel
 import com.example.cafeteriaapp.viewmodel.SharedViewModel
 
 class DrinkAdapter(
@@ -16,19 +17,18 @@ class DrinkAdapter(
     private val drinkList: List<DrinkModel>,
     private val onItemClickListener: (DrinkModel) -> Unit
 ) : RecyclerView.Adapter<DrinkAdapter.ViewHolder>() {
-    // TODO: Cambiar nombre variables
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        val imageViewProducto: ImageView = itemView.findViewById(R.id.imageViewProducto)
-        val textViewNombre: TextView = itemView.findViewById(R.id.textViewNombre)
-        val textViewDescripcion: TextView = itemView.findViewById(R.id.textViewDescripcion)
-        val textViewPrecio: TextView = itemView.findViewById(R.id.textViewPrecio)
+        val imageViewDrink: ImageView = itemView.findViewById(R.id.imageViewProducto)
+        val textViewNom: TextView = itemView.findViewById(R.id.textViewNombre)
+        val textViewDescripcio: TextView = itemView.findViewById(R.id.textViewDescripcion)
+        val textViewPreu: TextView = itemView.findViewById(R.id.textViewPrecio)
         val btnAgregar: Button = itemView.findViewById(R.id.btnAgregar)
 
         fun bind(drinkModel: DrinkModel) {
-            imageViewProducto.setImageResource(drinkModel.imgResId)
-            textViewNombre.text = drinkModel.nom
-            textViewDescripcion.text = drinkModel.descripcio
-            textViewPrecio.text = "Preu: ${drinkModel.preu}€"
+            imageViewDrink.setImageResource(drinkModel.imgResId)
+            textViewNom.text = drinkModel.nom
+            textViewDescripcio.text = drinkModel.descripcio
+            textViewPreu.text = "Preu: ${drinkModel.preu}€"
 
             btnAgregar.setOnClickListener {
                 val drink = drinkList[adapterPosition]

@@ -16,20 +16,18 @@ class FoodAdapter(
     private var foodList: List<FoodModel>,
     private val onItemClickListener: (FoodModel) -> Unit
 ) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
-
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // TODO: Cambiar nombre variables
-        val imageViewProducto: ImageView = itemView.findViewById(R.id.imageViewProducto)
-        val textViewNombre: TextView = itemView.findViewById(R.id.textViewNombre)
-        val textViewDescripcion: TextView = itemView.findViewById(R.id.textViewDescripcion)
-        val textViewPrecio: TextView = itemView.findViewById(R.id.textViewPrecio)
+        val imageViewFood: ImageView = itemView.findViewById(R.id.imageViewProducto)
+        val textViewNom: TextView = itemView.findViewById(R.id.textViewNombre)
+        val textViewDescripcio: TextView = itemView.findViewById(R.id.textViewDescripcion)
+        val textViewPreu: TextView = itemView.findViewById(R.id.textViewPrecio)
         val btnAgregar: Button = itemView.findViewById(R.id.btnAgregar)
 
         fun bind(foodModel: FoodModel) {
-            imageViewProducto.setImageResource(foodModel.imgResId)
-            textViewNombre.text = foodModel.nom
-            textViewDescripcion.text = foodModel.descripcio
-            textViewPrecio.text = "Preu: ${foodModel.preu}€"
+            imageViewFood.setImageResource(foodModel.imgResId)
+            textViewNom.text = foodModel.nom
+            textViewDescripcio.text = foodModel.descripcio
+            textViewPreu.text = "Preu: ${foodModel.preu}€"
 
             btnAgregar.setOnClickListener {
                 val food = foodList[adapterPosition]
