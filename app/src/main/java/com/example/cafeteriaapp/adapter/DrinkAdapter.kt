@@ -8,32 +8,31 @@ import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteriaapp.R
-import com.example.cafeteriaapp.menufragments.food.FoodModel
+import com.example.cafeteriaapp.menufragments.drink.DrinkModel
 import com.example.cafeteriaapp.viewmodel.SharedViewModel
 
-class FoodAdapter(
+class DrinkAdapter(
     private val sharedViewModel: SharedViewModel,
-    private var foodList: List<FoodModel>,
-    private val onItemClickListener: (FoodModel) -> Unit
-) : RecyclerView.Adapter<FoodAdapter.ViewHolder>() {
-
+    private val drinkList: List<DrinkModel>,
+    private val onItemClickListener: (DrinkModel) -> Unit
+) : RecyclerView.Adapter<DrinkAdapter.ViewHolder>() {
+    // TODO: Cambiar nombre variables
     inner class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
-        // TODO: Cambiar nombre variables
         val imageViewProducto: ImageView = itemView.findViewById(R.id.imageViewProducto)
         val textViewNombre: TextView = itemView.findViewById(R.id.textViewNombre)
         val textViewDescripcion: TextView = itemView.findViewById(R.id.textViewDescripcion)
         val textViewPrecio: TextView = itemView.findViewById(R.id.textViewPrecio)
         val btnAgregar: Button = itemView.findViewById(R.id.btnAgregar)
 
-        fun bind(foodModel: FoodModel) {
-            imageViewProducto.setImageResource(foodModel.imgResId)
-            textViewNombre.text = foodModel.nom
-            textViewDescripcion.text = foodModel.descripcio
-            textViewPrecio.text = "Precio: $${foodModel.preu}"
+        fun bind(drinkModel: DrinkModel) {
+            imageViewProducto.setImageResource(drinkModel.imgResId)
+            textViewNombre.text = drinkModel.nom
+            textViewDescripcion.text = drinkModel.descripcio
+            textViewPrecio.text = "Precio: $${drinkModel.preu}"
 
             btnAgregar.setOnClickListener {
-                val food = foodList[adapterPosition]
-                sharedViewModel.addFoodToCart(food)
+                val drink = drinkList[adapterPosition]
+                sharedViewModel.addDrinkToCart(drink)
             }
         }
     }
@@ -45,11 +44,11 @@ class FoodAdapter(
     }
 
     override fun onBindViewHolder(holder: ViewHolder, position: Int) {
-        val currentItem = foodList[position]
+        val currentItem = drinkList[position]
         holder.bind(currentItem)
     }
 
     override fun getItemCount(): Int {
-        return foodList.size
+        return drinkList.size
     }
 }

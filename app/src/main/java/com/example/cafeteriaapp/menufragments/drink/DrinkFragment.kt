@@ -1,4 +1,4 @@
-package com.example.cafeteriaapp.menufragments.food
+package com.example.cafeteriaapp.menufragments.drink
 
 import android.os.Bundle
 import androidx.fragment.app.Fragment
@@ -9,34 +9,34 @@ import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.cafeteriaapp.R
-import com.example.cafeteriaapp.adapter.FoodAdapter
-import com.example.cafeteriaapp.viewmodel.FoodViewModel
+import com.example.cafeteriaapp.adapter.DrinkAdapter
+import com.example.cafeteriaapp.viewmodel.DrinkViewModel
 import com.example.cafeteriaapp.viewmodel.SharedViewModel
 
-class FoodFragment : Fragment() {
+class DrinkFragment : Fragment() {
 
-    private lateinit var foodViewModel: FoodViewModel
+    private lateinit var drinkViewModel: DrinkViewModel
     private lateinit var sharedViewModel: SharedViewModel
-    private lateinit var adapter: FoodAdapter
+    private lateinit var adapter: DrinkAdapter
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
-        val view = inflater.inflate(R.layout.fragment_food, container, false)
+        val view = inflater.inflate(R.layout.fragment_drink, container, false)
 
-        val recyclerView: RecyclerView = view.findViewById(R.id.foodRecyclerView)
+        val recyclerView: RecyclerView = view.findViewById(R.id.drinkRecyclerView)
 
-        // Inicializar el FoodViewModel
-        foodViewModel = ViewModelProvider(this).get(FoodViewModel::class.java)
+        // Inicializar el DrinkViewModel
+        drinkViewModel = ViewModelProvider(this).get(DrinkViewModel::class.java)
 
         // Inicializar el SharedViewModel
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
-        val foodList = foodViewModel.foodLiveData.value ?: emptyList()
+        val drinkList = drinkViewModel.drinkLiveData.value ?: emptyList()
 
-        adapter = FoodAdapter(sharedViewModel, foodList) { food ->
-            sharedViewModel.addFoodToCart(food)
+        adapter = DrinkAdapter(sharedViewModel, drinkList) { drink ->
+            sharedViewModel.addDrinkToCart(drink)
         }
 
         recyclerView.adapter = adapter

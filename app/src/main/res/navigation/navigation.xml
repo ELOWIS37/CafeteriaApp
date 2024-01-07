@@ -12,12 +12,12 @@
         tools:layout="@layout/fragment_food" />
     <fragment
         android:id="@+id/drinkFragment"
-        android:name="com.example.cafeteriaapp.DrinkFragment"
+        android:name="com.example.cafeteriaapp.menufragments.drink.DrinkFragment"
         android:label="fragment_drink"
         tools:layout="@layout/fragment_drink" />
     <fragment
         android:id="@+id/payFragment"
-        android:name="com.example.cafeteriaapp.PayFragment"
+        android:name="com.example.cafeteriaapp.menufragments.payment.PayFragment"
         android:label="fragment_pay"
         tools:layout="@layout/fragment_pay" />
     <activity

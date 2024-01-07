@@ -4,7 +4,7 @@
 
     <item android:gravity="center">
         <bitmap
-            android:src="@drawable/logocoffeeshop"
+            android:src="@drawable/logocoffeeshopbg"
             android:antialias="true"
             android:dither="true"
             android:filter="true" />
