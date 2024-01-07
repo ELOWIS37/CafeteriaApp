@@ -29,11 +29,10 @@ class PayFragment : Fragment() {
 
         sharedViewModel = ViewModelProvider(requireActivity()).get(SharedViewModel::class.java)
 
-        adapter = PayAdapter(emptyList()) // Pasa una lista vacía inicialmente
+        adapter = PayAdapter(emptyList())
         recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(requireContext())
 
-        // Observar los cambios en los elementos del carrito y actualizar el RecyclerView
         sharedViewModel.cartItems.observe(viewLifecycleOwner) { cartItems ->
             adapter.updateItems(cartItems)
         }
@@ -45,14 +44,14 @@ class PayFragment : Fragment() {
             sharedViewModel.resetCart()
         }
 
-        btnPagar.setOnClickListener {
-            sharedViewModel.resetCart()
-            Toast.makeText(requireContext(), "Has pagat la comanda de", Toast.LENGTH_SHORT).show()
-        }
         var totalTextView: TextView = view.findViewById(R.id.totalTextView)
-        // Observar el total y actualizar la interfaz de usuario
         sharedViewModel.totalAmount.observe(viewLifecycleOwner) { total ->
-            totalTextView.text = "Preu Total: $total"
+            totalTextView.text = "Preu Total: $total€"
+        }
+
+        btnPagar.setOnClickListener {
+            Toast.makeText(requireContext(), "Comanda de ${totalTextView.text} PAGADA", Toast.LENGTH_SHORT).show()
+            sharedViewModel.resetCart()
         }
 
         return view

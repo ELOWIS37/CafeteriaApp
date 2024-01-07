@@ -29,7 +29,7 @@ class FoodAdapter(
             imageViewProducto.setImageResource(foodModel.imgResId)
             textViewNombre.text = foodModel.nom
             textViewDescripcion.text = foodModel.descripcio
-            textViewPrecio.text = "Precio: $${foodModel.preu}"
+            textViewPrecio.text = "Preu: ${foodModel.preu}€"
 
             btnAgregar.setOnClickListener {
                 val food = foodList[adapterPosition]

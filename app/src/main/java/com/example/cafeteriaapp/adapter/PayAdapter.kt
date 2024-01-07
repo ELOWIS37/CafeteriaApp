@@ -23,7 +23,7 @@ class PayAdapter(
             imageViewProduct.setImageResource(payModel.imgResId)
             textViewName.text = payModel.nom
             textViewDescription.text = payModel.descripcio
-            textViewPrice.text = "Precio: $${payModel.preu}"
+            textViewPrice.text = "Preu: ${payModel.preu}€"
         }
     }
 
