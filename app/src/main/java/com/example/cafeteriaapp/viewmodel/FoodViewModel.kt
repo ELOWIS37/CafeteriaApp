@@ -18,10 +18,6 @@ class FoodViewModel : ViewModel() {
         _foodList.value = obtenirFood() // Deberías implementar esta función
     }
 
-    fun afegirAlCarrito(model: FoodModel) {
-
-    }
-
     private fun obtenirFood(): List<FoodModel> {
         // Aquí debes crear y devolver una lista de objetos Producto con diferentes datos
         // Por ejemplo:

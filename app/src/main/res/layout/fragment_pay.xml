@@ -5,7 +5,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="592dp"
         android:orientation="vertical"
         android:padding="16dp">
 
@@ -13,20 +13,20 @@
             android:id="@+id/totalPriceTextView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
+            android:layout_marginBottom="16dp"
             android:text="Total a Pagar"
             android:textSize="24sp"
-            android:textStyle="bold"
-            android:layout_marginBottom="16dp" />
+            android:textStyle="bold" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/payRecyclerView"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
+            android:layout_width="380dp"
+            android:layout_height="293dp"
+            android:layout_marginBottom="16dp"
             android:background="@drawable/rounded_background"
             android:clipToPadding="false"
             android:paddingTop="8dp"
             android:paddingBottom="8dp"
-            android:layout_marginBottom="16dp"
             android:scrollbars="vertical" />
 
         <Button
@@ -36,6 +36,24 @@
             android:text="Pagar"
             android:textColor="@android:color/white"
             android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <Button
+            android:id="@+id/btnBuidar"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:backgroundTint="@color/red"
+            android:text="Buidar Cistella"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+        <TextView
+            android:id="@+id/totalTextView"
+            android:layout_width="195dp"
+            android:layout_height="wrap_content"
+            android:text="Preu Total: "
+            android:textSize="24sp"
             android:textStyle="bold" />
 
     </LinearLayout>

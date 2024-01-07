@@ -16,11 +16,6 @@ class DrinkViewModel : ViewModel(){
         _drinkList.value = obtenirDrink() // Deberías implementar esta función
     }
 
-    fun agregarAlCarrito(model: DrinkModel) {
-        // Aquí puedes realizar las acciones necesarias al agregar al carrito
-        // Por ejemplo, puedes guardar el producto en una lista de productos en el ViewModel
-    }
-
     private fun obtenirDrink(): List<DrinkModel> {
         // Aquí debes crear y devolver una lista de objetos Producto con diferentes datos
         // Por ejemplo:
